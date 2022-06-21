@@ -1,0 +1,2002 @@
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+*,
+*::before,
+*::after{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+button:active, button:focus {
+    outline: none;
+}
+button::-moz-focus-inner {
+    border: 0;
+}
+input:focus {outline: 0;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+
+hr{
+    width: 100%;
+    height: 1px;
+    margin: 40px 0;
+
+    border: 0;
+    background-color: #e5e5e5;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.container_about{
+    width: 100%;
+    max-width: 1468px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.page{
+    overflow: hidden;
+}
+
+/*Header*/
+.header{
+    width: 100%;
+    padding-top: 9px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100020;
+}
+.header.fixed{
+    padding: 10px 0;
+    background-color: #b3ddf6;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    transform: translate3d(0, 0 ,0);
+}
+.header.active{
+    background-color: #b3ddf6;
+}
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo{
+    cursor: pointer;
+    width: 152px;
+    height: 49px;
+    left: 0px;
+    top: 0px;
+}
+.header_contact{
+    font-family: 'Roboto';
+    font-style: normal;
+    display: flex;
+    padding-left: 57px;
+    padding-top: 18px;
+}
+.tel_ico{
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+.tel{
+    font-weight: 700;
+    font-size: 18px;
+
+
+    line-height: 21px;
+    color:#202020;
+    text-decoration: none;
+}
+.schedule{
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: #7D808A;
+}
+
+/*Nav*/
+
+.nav{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+
+.nav_link{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 15px;
+    position: relative;
+
+    color: #202020;
+    text-decoration: none;
+    transition: color .1s linear;    
+}
+.nav_link::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    display: block;
+
+    background-color: #202020;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity .1s linear;
+}
+
+.nav_link:hover:after{
+    opacity: 1;
+}
+
+
+/* Nav toggle */
+.nav_toggle{
+    width: 30px;
+    padding: 10px 0;
+    display: none;
+
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 40px;
+    right: 24px;
+    z-index: 1;
+}
+.nav_toggle:focus{
+    outline: 0;
+}
+.burger_menu{
+    display: none;
+}
+.header.fixed .nav_toggle{
+    top: 25px;
+}
+.nav_toggle_item{
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+
+    transition: background .2s linear;
+
+    
+}
+.nav_toggle.active{
+    margin-right: -8px;
+}
+.nav_toggle.active .nav_toggle_item{
+    background: none;
+}
+
+
+/*Intro*/
+.intro{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 948px;
+    position: relative;
+
+    background: url("../img/intro/headerBackGround.png") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+
+
+.intro_cloud{
+    position: absolute;
+    bottom: 90px;
+    left: 0px;
+    z-index: 100;
+    width: 100%;
+    height: 170px;
+    background: url("../img/intro/Cloud1.png") center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.intro_barn{
+    position: absolute;
+    bottom: 160px;
+    left: 145px;
+    z-index: 1;
+    width: 428px;
+    height: 192px;
+    background: url("../img/intro/barn.png") center no-repeat;
+    background-size: cover;
+}
+.intro_horse{
+    position: absolute;
+    bottom: 96px;
+    right: 150px;
+    z-index: 3;
+
+    width: 663px;
+    height: 671px;
+    background: url("../img/intro/horse1.png") center no-repeat;
+    background-size: cover;
+}
+.intro_horse_small{
+    position: absolute;
+    bottom: 182px;
+    left: 510px;
+    z-index: 2;
+
+    width: 213px;
+    height: 209px;
+    background: url("../img/intro/horse2.png") center no-repeat;
+    background-size: cover;
+}
+
+.intro_right_bush{
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    z-index: 200;
+
+    width: 167px;
+    height: 632px;
+    background: url("../img/intro/rightBush.png") center no-repeat;
+    background-size: cover;
+}
+.intro_left_bush{
+    position: absolute;
+    bottom: 64px;
+    left: 0px;
+    z-index: 200;
+
+    width: 211px;
+    height: 435px;
+    background: url("../img/intro/leftBush.png") center no-repeat;
+    background-size: cover;
+}
+
+
+
+
+.intro_inner{
+    width: 100%;
+    padding-top: 157px;
+    max-width: 613px;
+}
+.intro_title{
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 57px;
+    line-height: 107%;
+    color: #000;
+}
+
+.intro_cuptitle_conteiner{
+    display: flex;
+    margin-top: 40px;
+}
+.intro_cuptitle{
+    font-family: 'Alegreya Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    max-width: 477px;
+
+    color: #646464;
+}
+.intro_cuptitle_line{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 26px;
+    margin-top: 17px;
+    margin-right: 20px;
+
+    background-color: #8F8F8F;
+}
+
+.btn{
+    display: block;
+    width: 270px;
+    height: 70px;
+    text-align: center;
+    align-items: center;
+    margin-top: 42px;
+
+    background: linear-gradient(180deg, #9BCFFF 0%, #FFF383 0.01%, #FFC700 100%);
+    
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 0px #C89C00;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 32px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #6A5300;
+}
+
+.btn:hover{
+    background: linear-gradient(180deg, #9BCFFF 0%, #FFE456 0.01%, #FFB800 100%);
+}
+
+
+
+
+/***** SECTION ******/
+
+.section_title{
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+
+    text-align: center;
+
+    color: #363434;
+    margin-bottom: 70px;
+}
+
+.about{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.about_img {
+    width: 871px;
+    height: 529px;
+    position: absolute;
+    left: -145px;
+}
+.about_info{
+    width: 50%;
+}
+.about_cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.about_item{
+    width: 50%;
+}
+.about_count{
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 160%;
+
+
+    color: #008139;
+}
+.about_suptitle{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    padding-right: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+
+    color: #0B0B0B;
+}
+.about_description{
+    margin-top: 41px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 28px;
+
+
+    color: #7E7E7E;
+}
+
+
+
+
+/***** WE *****/
+
+.section_we{
+    margin-top: 185px;
+}
+.we_title{
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+    
+    margin-bottom: 108px;
+    text-align: center;
+
+    color: #363434;
+}
+.we_cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.we_item{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.we_img{
+    margin: 0 auto;
+}
+.we_cuptitle{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 22px;
+    
+    margin-bottom: 26px;
+    
+    text-align: center;
+    
+    color: #0B0B0B;
+}
+.we_img1{
+    margin-bottom: 28px;
+}
+.we_img2{
+    margin-bottom: 25px;
+}
+.we_img3{
+    margin-bottom: 6px;
+}
+.we_info{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 151.7%;
+    text-align: center;
+    max-width: 271px;
+    
+    color: #7E7E7E;
+}
+
+
+/***** DIRECTIONS *****/
+
+.directions{
+    margin-top: 100px;
+    margin-bottom: 150px;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 261px;
+}
+.sky{
+    width: 100%;
+    height: 1507px;
+
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    z-index: -2;
+
+    background: url("../img/sky.png") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;    
+}
+.lawn{
+    width: 100%;
+    height: 1344px;
+
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: -1;
+
+    background: url("../img/lawn.png") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.directions_cloud{
+    position: absolute;
+    bottom: 2px;
+    left: 0px;
+    z-index: 100000;
+    width: 100%;
+    height: 170px;
+    background: url("../img/intro/Cloud1.png") center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.directions_left_hourse{
+    width: 239px;
+    height: 414px;
+
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    z-index: 10;
+
+    background: url("../img/directions/Девушка\ на\ лошади\ 1.png") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.directions_right_hourse{
+
+    width: 289px;
+    height: 414px;
+
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+    z-index: 10;
+
+    background: url("../img/directions/Мальчик\ с\ лошадью\ 1.png") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.directions_title{
+    z-index: 5;
+    margin-bottom: 143px;
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+
+    text-align: center;
+
+    color: #363434;
+}
+.directions_cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+}
+.directions_item{
+    position: relative;
+    width: 370px;
+
+    padding-top: 240px;
+
+
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+}
+.directions_item:nth-child(-n+3){
+    margin-bottom: 80px;
+}
+.direction_img{
+    width: 320px;
+    height: 220px;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.directions_cuptitle{
+    position: relative;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 27px;
+    align-items: center;
+    text-align: center;
+
+    margin-bottom: 31px;
+    
+    color: #363434;
+}
+.green_line{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    z-index: 454px;
+    
+    width: 26px;
+    height: 2px;
+    background: #008139;
+
+}
+.direction_info{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 21px;
+    
+    align-items: center;
+    text-align: center;
+    
+    color: #7E7E7E;
+    padding: 0 25px 45px;
+}
+
+.direction_btn{
+    margin: 0 auto;
+}
+
+
+
+/***** Clients *****/
+
+.clients{
+    position: relative;
+    margin-bottom: 250px;
+}
+
+.clients_title{
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+    
+    text-align: center;
+    
+    color: #363434;
+    margin-bottom: 70px;
+}
+
+.slients_slider{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: static;
+}
+
+.clients_item{
+    border-bottom: 5px solid #fff;
+    border-right: 5px solid #fff;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+    width: 321px;
+}
+
+.client_img{
+    min-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10000;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.slick-dots{
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%)!important;
+    z-index: 10020;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+.slick-dots button{
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: #E1E1E1;
+}
+.slick-dots .slick-active button{
+    background: #FFC700;
+}
+
+.slick-arrow {
+    width: 40px;
+    height: 40px;
+
+    display: block;
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: -69px;
+    z-index: 14321;
+
+    background: linear-gradient(180deg, #9BCFFF 0%, #FFF8B6 0.01%, #FFC700 100%);
+    box-shadow: 0px 1px 0px #C89C00;
+    border-radius: 50%;
+
+}
+.slick-arrow:hover {
+    background: linear-gradient(180deg, #9BCFFF 0%, #FFE456 0.01%, #FFB800 100%);
+}
+.slick-arrow::after {
+    content: "";
+    display: block;
+    background: url("../img/Vector.svg") no-repeat;
+    background-size: cover;
+    width: 9px;
+    height: 15px;
+    margin: 0 auto;
+}
+
+.slick-prev {
+    left: 40%;
+}
+.slick-prev::after {
+    transform: rotate(180deg);
+}
+.slick-next {
+    right: 40%;
+}
+
+
+
+/***** Horses *****/
+.horses{
+    margin-bottom: 240px;
+}
+.horses .slick-list{
+    overflow: visible;
+}
+.horses_title{
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+    
+    text-align: center;
+    
+    color: #363434;
+    margin-bottom: 95px;
+}
+.horses_card{
+    padding: 0 10px;
+    width: 380px;
+}
+
+.horses_item {
+    position: relative;
+    padding: 421px 10px 0;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 14px 30px rgb(0 0 0 / 7%);
+    border-radius: 5px;
+}
+.horse_img{
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 421px;  
+}
+
+
+/***** Answers *****/
+
+.answers{
+    background: url(../img/фон_вопросы\ 1.png) no-repeat;
+    background-size: cover;
+    padding-top: 140px;
+    display: flex;
+    z-index: 1;
+    position: relative;
+}
+.top_cloud{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: 100%;
+    height: 212px;
+    background: url("../img/cloud2.png") center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.bottom_cloud{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    width: 100%;
+    height: 194px;
+    background: url(../img/intro/Cloud1.png) center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.anwsers_i{
+    width: 50%;
+}
+.girl_with_horse{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 768px;
+    height: 538px;
+    background: url(../img/girlWithHorse.png) center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.anwsers_item{
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 16px 51px rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+    padding: 60px 0 47px;
+    max-width: 470px;
+    z-index: 20;
+    margin-bottom: 140px;
+
+    position: relative;
+}
+.answer_kust{
+    position: absolute;
+    right: -142px;
+    bottom: -166px;
+    width: 297px;
+    height: 371px;
+
+    background: url(../img/Куст.png) center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+.answers_title{
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 35px;
+
+    text-align: center;
+
+    color: #363434;
+}
+.answers_info{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 21px;
+    align-items: center;
+    text-align: center;
+    color: #7E7E7E;
+    padding: 15px 94px 45px;
+    margin-bottom: 30px;
+}
+.answer_input{
+    display: block;
+    width: 330px;
+    height: 61px;
+    left: 1145px;
+    top: 6284px;
+
+    background: #FFFFFF;
+    border: 1px solid #8F8F8F;
+    border-radius: 5px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    margin: 0 auto 21px;
+    padding: 0 20px;
+}
+.btn_answer{
+    margin: 0 auto;
+    width: 330px;
+}
+.agree{
+    display: flex;
+    justify-content: center;
+    margin-top: 31px;
+}
+#raz{
+    cursor: pointer;
+}
+.label_agree{
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    user-select: none; 
+    cursor: pointer;
+
+    padding-left: 10px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+
+
+    color: #8A8A8A;
+}
+
+
+/***** Reviews *****/
+.reviews{
+    margin-top: 120px;
+    margin-bottom: 250px;
+    padding: 0 15px;
+}
+.reviews_title{
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+    text-align: center;
+    
+    color: #000000;
+
+    margin-bottom: 70px;
+}
+.reviews_card{
+    width: 440px;
+    margin: 0 20px;
+    border: 1px solid #EAEAEA;
+    padding: 30px;
+
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+.reviews_info{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+
+    color: #363434;
+    margin-bottom: 15px;
+}
+.reviews_more{
+    height: 30px;
+    width: 130px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+
+    background: #FFFFFF;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    padding-top: 8px;
+    padding-left: 24px;
+    margin-bottom: 34px;
+
+    color: #008139;
+}
+.reviews_more_img{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.reviews_client{
+    display: flex;
+    justify-content: space-between;
+}
+.reviews_client_info{
+    display: flex;
+}
+.reviews_client_desc{
+    margin-left: 10px;
+}
+.reviews_client_name{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 6px;
+    
+    color: #101820;
+}
+.reviews_client_social{
+    display: flex;
+}
+.reviews_client_social_link{
+    margin-right: 10px;
+}
+.quote{
+    width: 45px;
+    height: 37px;
+    margin-right: 20px;
+    margin-top: 3px;
+
+    background: url(../img/reviews/quote.svg) center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+
+
+/***** Contacts *****/
+.contacts{
+    padding: 70px 0;
+    background: url(../img/bg.png) center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    position: relative;
+}
+.vector{
+    position: absolute;
+    top: 50%;
+    right: 30%;
+}
+.left_kust{
+    background: url(../img/contacts/image\ 6.png) center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+
+    width: 465px;
+    height: 366px;
+    position: absolute;
+    bottom: -150px;
+    left: -110px;
+    z-index: 2;
+}
+.right_kust{
+    background: url(../img/contacts/image\ 5.png) center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+
+    width: 199px;
+    height: 674px;
+    position: absolute;
+    bottom: -150px;
+    right: 0;
+    z-index: 2;
+
+}
+.contacts_card{
+    
+    padding: 50px 70px 70px;
+    background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0px 16px 51px rgba(0, 0, 0, 0.11);
+    border-radius: 5px;
+    max-width: 521px;
+}
+.contacts_title{
+    position: relative;
+    font-family: 'Philosopher';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+
+    color: #000000;
+    margin-bottom: 75px;
+}
+.contacts_green_line{
+    left: 0;
+    bottom: -30px;
+    transform: none;
+    height: 1px;
+}
+.contacts_info{
+    display: flex;
+    margin-bottom: 28px;
+}
+.contacts_desc{
+    margin-left: 22px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+
+    color: #363434;
+}
+.contacts_desc div{
+    margin-bottom: 14px;
+}
+.contacts_social{
+    margin-top: 30px;
+    display: flex;
+    justify-content: end;
+    margin-right: 2px;
+}
+.contacts_social_link{
+    margin-left: 13px;
+}
+
+
+/***** Footer *****/
+.footer{
+    position: relative;
+    padding: 24px 0;
+    background: #0B0B0B;
+    z-index: 200;
+}
+.footer__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 27px;
+}
+.footer_nav{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+.footer_nav_link{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 15px;
+    position: relative;
+    color: #EAEAEA;
+    text-decoration: none;
+    transition: color .1s linear;
+}
+.footer_nav_link::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    display: block;
+
+    background-color: #EAEAEA;
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity .1s linear;
+}
+
+.footer_nav_link:hover:after{
+    opacity: 1;
+}
+
+.footer_btn{
+    text-decoration: none;
+    color: #EAEAEA;
+    padding: 14px 41px;
+    margin-left: 29px;
+
+    border: 1px solid #FDE724;
+    border-radius: 5px;
+    transition: .1s linear;
+}
+.footer_btn:hover{
+    background-color: #FDE724;
+    color: #6A5300;
+}
+.footer_political{
+    display: flex;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    text-decoration-line: underline;
+
+    color: #7D808A;
+}
+.footer_political_inner{
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 1230px){
+
+    /* intro */
+    .intro_horse{
+        width: 543px;
+        height: 550px;
+        
+        right: 110px
+    }
+}
+@media (max-width: 1000px) {
+    .btn{
+        width: 218px;
+        height: 60px;
+    }
+
+    /* intro */
+    
+    .intro_btn{
+        margin-top: 37px;
+    }
+    .intro{
+        min-height: 693px;
+    }
+    .intro_cloud{
+        bottom: 57px;
+    }
+    .intro_barn{
+        width: 259px;
+        height: 116px;
+        bottom: 125px;
+        left: 238px;
+    }
+    .intro_horse{
+        width: 433px;
+        height: 437px;
+        bottom: 68px;
+        right: 27px
+    }
+    .intro_horse_small{
+        width: 114px;
+        height: 111px;
+        bottom: 137px;
+        left: 461px;
+    }
+    .intro_title{
+        font-size: 47px;
+    }
+    .intro_cuptitle_conteiner{
+        margin-top: 30px;
+    }
+    .intro_cuptitle{
+        font-size: 20px;
+    }
+    .intro_right_bush{
+        width: 61px;
+        height: 229px;
+        bottom: 62px;
+    }
+    .intro_left_bush{
+        width: 100px;
+        height: 207px;
+        bottom: 68px
+    }
+    .intro_btn{
+        margin-bottom: 291px;
+    }
+
+    h3{
+        font-size: 30px!important;
+    }
+
+
+    /*** About ***/
+    .section_title{
+        margin-bottom: 31px;
+    }
+    .about_img{
+        width: 517px;
+        height: 313px;
+        left: -40px;
+    }
+    .about_count{
+        font-size: 32px;
+    }
+    .about_suptitle{
+        font-size: 13px;
+        margin-bottom: 36px;
+    }
+    .about_description{
+        left: 0;
+        position: absolute;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+
+    /*** WE ***/
+    .section_we{
+        margin-top: 234px;
+    }
+    .we_cuptitle{
+        font-size: 15px;
+        line-height: 25px;
+        margin-bottom: 10px;
+    }
+    .we_info{
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    /*** directions ***/
+    .directions{
+        margin-top: 20px;
+        margin-bottom: 107px;
+        padding-bottom: 356px;
+    }
+    .directions_item{
+        width: 300px;
+        padding-top: 176px;
+    }
+    .direction_img{
+        width: 250px;
+        height: 181px;
+    }
+    .directions_cuptitle{
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .direction_info{
+        font-size: 13px;
+        line-height: 20px;
+        padding-bottom: 33px;
+    }
+
+    /*** Clients ***/
+    .clients{
+        margin-bottom: 190px;
+    }
+    .clients_title{
+        margin-bottom: 40px;
+    }
+    .clients_item{
+        height: 201px;
+        width: 188px;
+    }
+
+
+    /*** Horses ***/
+    .horses{
+        margin-bottom: 195px;
+    }
+    .horses_card{
+        width: 293px;
+    }
+    .horses_item{
+        padding-top: 315px;
+    }
+    .horse_img{
+        width: 243px;
+        height: 320px;  
+    }
+
+    /*** Answers ***/
+    .top_cloud{
+        height: 110px;
+    }
+    .bottom_cloud{
+        height: 132px;
+    }
+    .anwsers_item{
+        max-width: 450px;
+    }
+    .girl_with_horse{
+        left: -140px;
+    }
+
+    /*** Reviews ***/
+    .reviews{
+        margin-bottom: 200px;
+        padding: 0 15px;
+    }
+    .reviews_title{
+        margin-bottom: 40px;
+    }
+
+    /*** Contacts ***/
+    .left_kust,
+    .right_kust{
+        display: none;
+    }
+    .contacts_card{
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 768px){
+    .btn{
+        width: 180px;
+        height: 45px;
+    }
+
+    /* Header */
+    .nav_link{
+        font-size: 11px;
+        line-height: 13px;
+        margin: 0 12px;
+    }
+    .tel{
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .schedule{
+        font-size: 11px;
+        line-height: 13px;
+    }
+    .header_logo{
+        width: 120px;
+        height: 39px;
+    }
+    .header_contact{
+        padding-left: 30px;
+    }
+    
+    /* intro */
+    .intro{
+        min-height: 539px;
+    }
+    .intro_cloud{
+        bottom: 55px;
+    }
+    .intro_barn{
+        width: 207px;
+        height: 93px;
+        bottom: 98px;
+        left: 127px;
+    }
+    .intro_horse{
+        width: 368px;
+        height: 371px;
+        bottom: 63px;
+        right: 23px
+    }
+    .intro_horse_small{
+        width: 114px;
+        height: 111px;
+        bottom: 98px;
+        left: 299px;
+    }
+    .intro_right_bush{
+        width: 42px;
+        height: 160px;
+        bottom: 62px;
+    }
+    .intro_left_bush{
+        width: 68px;
+        height: 141px;
+        bottom: 68px
+    }
+    .intro_title{
+        font-size: 37px;
+        line-height: 41px;
+    }
+    .intro_cuptitle{
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .intro_inner{
+        max-width: 400px;
+    }
+
+    h3{
+        font-size: 27px!important;
+        line-height: 27px!important;
+    }
+
+    /*** About ***/
+    .about_info{
+        width: 50%;
+    }
+    .about_img{
+        width: 451px;
+        height: 273px;
+        left: -63px;
+    }
+
+    /*** WE ***/
+    .section_we{
+        margin-top: 213px;
+    }
+    .we_title{
+        margin-bottom: 55px;
+    }
+    .we_info{
+        padding: 0 5px;
+    }
+
+    /*** Directions ***/
+    .directions_cards{
+        display: flex;
+        justify-content: center
+    }
+    .directions{
+        padding-bottom: 304px;
+        margin-bottom: 35px;
+    }
+    .directions_cards{
+        margin-bottom: 0;
+    }
+
+    .directions_title{
+        margin-bottom: 100px;
+    }
+    .directions_item{
+        width: 354px;
+        margin-bottom: 45px!important;
+    }
+    .direction_img{
+        height: 181px;
+        width: 304px;
+    }
+
+    /*** clients ***/
+    .clients{
+        margin-bottom: 169px;
+    }
+    .slick-prev {
+        left: 30%;
+    }
+    .slick-next {
+        right: 30%;
+    }
+
+
+    /*** Horses ***/
+    .horses{
+        margin-bottom: 160px;
+    }
+    .horses_card{
+        width: 293px;
+    }
+    .horses_item{
+        padding-top: 253px;
+    }
+    .horse_img{
+        width: 210px;
+        height: 252px;
+    }
+    .directions_cuptitle{
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .direction_info{
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    /*** Answers ***/
+    .answers{
+        padding-top: 103px;
+        position: relative;
+    }
+    .anwsers_i{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 28;
+    }
+    .anwsers_item{
+        margin: 0 auto;
+        padding-top: 50px;
+        margin-bottom: 498px;
+    }
+    .answers_info{
+        padding-bottom: 15px;
+        padding-left: 91px;
+        padding-right: 91px;
+        margin-bottom: 0;
+    }
+    .answer_kust{
+        display: none;
+    }
+
+    /*** Reviews ***/
+    .reviews{
+        margin-top: 80px;
+    }
+    .reviews_card{
+        width: 354px;
+    }
+
+    /*** Contacts ***/
+    .contacts_card{
+        padding: 40px;
+        max-width: 354px;
+    }
+    .contacts_title{
+        font-size: 27px;
+        line-height: 36px;
+        margin-bottom: 41px;
+    }
+    .contacts_info{
+        margin-bottom: 10px;
+    }
+    .contacts_desc{
+        font-size: 16px;
+        line-height: 25px;
+        
+    }
+    .contacts_green_line{
+        bottom: -20px;
+    }
+    .vector{
+        right: 10%;
+    }
+}
+@media (max-width: 480px) {
+    .slick-next {
+        right: 20%;
+    }
+    .slick-prev {
+        left: 20%;
+    }
+    .container{
+        padding: 0 5px;
+    }
+    .burger_menu{
+        display: block;
+        cursor: pointer;
+    }
+    .nav.atcive{
+        display: block;
+    }
+    .nav{
+        width: 100%;
+        height: 100vh;
+        color: #fff;
+        flex-direction: column;
+        text-align: center;
+        display: none;
+        position: fixed;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        background-color: black;
+        opacity: .9;
+    }
+    .nav.active{
+        display: flex;
+    }
+    .nav_link{
+        padding: 30px 15px;
+        color: #fff;
+    }
+    .nav_hidden{
+        position: absolute;
+        top: 24px;
+        right: 24px;
+    }
+    .nav_link:hover{
+        color: #fff;
+        background-color :none;
+    }
+    .nav_link:hover::after{
+        display: none;
+    }
+    .header_contact{
+        display: none;
+    }
+    .btn{
+        width: 180px;
+        height: 45px;
+    }
+
+    /* Intro */
+    .intro{
+        height: 564px;
+        background: url("../img/фон480.png");
+    }
+    .intro_inner{
+        padding-top: 150px;
+    }
+    .intro_cuptitle_conteiner{
+        margin-top: 26px;
+    }
+    .intro_title,
+    .intro_cuptitle{
+        text-align: center;
+    }
+    .intro_title{
+        font-size: 33px;
+        line-height: 37px;
+    }
+    .intro_cuptitle{
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 20px;
+    }
+    .intro_btn{
+        margin: 0 auto;
+        margin-bottom: 205px;
+    }
+    .intro_cloud{
+        bottom: 0px;
+        width: 480px;
+        height: 51px;
+    }
+    .intro_horse{
+        right: 20px;
+        bottom: 10px;
+        width: 189px;
+        height: 190px;
+    }
+    .intro_barn{
+        width: 207px;
+        height: 93px;
+        left: -11px;
+        bottom: 38px;
+    }
+    .intro_horse_small{
+        width: 93px;
+        height: 90px;
+        left: 184px;
+        bottom: 53px;
+    }
+    .intro_left_bush{
+        width: 44px;
+        height: 93px;
+        bottom: 1px;
+    }
+    .intro_right_bush{
+        width: 34px;
+        height: 131px;
+        bottom: 4px;
+    }
+
+
+    /*** About ***/
+    .section_title{
+        margin-top: 49px;
+    }
+    .about_img{
+        display: none;
+    }
+    .about_info{
+        width: 100%;
+        text-align: center;
+    }
+    .about_count{
+        font-size: 27px;
+        line-height: 160%;
+    }
+    .about_suptitle{
+        font-size: 12px;
+        line-height: 18px;
+
+        text-align: center;
+    }
+    .about_description{
+        margin-top: 0px;
+    }
+
+    /*** why us ***/
+    .we_item{
+        width: 50%;
+    }
+
+    /*** directions ***/
+    .directions{
+        padding-bottom: 150px;
+    }
+    .lawn{
+        background: url("../img/Газон480.png") no-repeat;
+        background-size: cover;
+        position: absolute;
+        bottom: 0;
+    }
+    .sky{
+        background: url("../img/Небо480.png") no-repeat;
+        background-size: cover;
+        position: absolute;
+        bottom: 0!important;
+    }
+    .directions_cards{
+        display: flex;
+        justify-content: center
+    }
+    .direction_img{
+        height: 150px;
+        width: 250px;
+    }
+    .directions_item{
+        width: 300px;
+        padding-top: 145px;
+    }
+    .directions_cloud{
+        bottom: 0;
+    }
+    .directions_right_hourse{
+        width: 98px;
+        height: 141px;
+    }
+    .directions_left_hourse{
+        width: 86px;
+        height: 149px;
+    }
+
+
+    /*** clients ***/
+    .clients_item{
+        width: 144px;
+        height: 120px;
+    }
+    .client_img{
+        width: 144px;
+        height: 120px;
+    }
+
+    /*** horses ***/
+    .horses_card{
+        width: 260px;
+    }
+    .horses_item{
+        padding-top: 289px;
+    }
+    .horse_img{
+        height: 290px;
+        width: 230px;
+    }
+    /*** anwswers ***/
+    .girl_with_horse{
+        height: 309px;
+        width: 441px;
+        background-size: cover;
+    }
+    .anwsers_item{
+        margin-bottom: 280px;
+        max-width: 300px;
+    }
+    .answers_title{
+        font-size: 22px;
+        line-height: 22px;
+    }
+    .answers_info{
+        font-size: 13px;
+        line-height: 21px;
+        padding-left: 6px;
+        padding-right: 0px;
+    }
+    .answer_input{
+        width: 225px;
+        height: 50px;
+    }
+
+
+    /*** contacts ***/
+    .contacts{
+        margin-bottom: 238px;
+        position: relative;
+        height: 510px;
+    }
+    .contacts_card{
+        position: absolute;
+        bottom: -50%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 28px;
+    }
+
+    /*** footer ***/
+    .footer__inner,
+    .footer_nav{
+        flex-direction:column;
+    }
+    .footer_nav_link,
+    .footer_btn{
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 320px){
+    .intro_inner {
+        padding-top: 141px;
+    }   
+    .intro_title{
+        font-size: 24px;
+        line-height: 27px;
+    }
+    .intro_cuptitle{
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .intro_btn{
+        margin-bottom: 242px;
+    }
+    .intro_barn{
+        width: 180px;
+        height: 81px;
+        left: -40px;
+    }
+    .intro_horse_small{
+        display: none;
+    }
+    .about_item {
+        width: 100%;
+    }
+    .about_suptitle{
+        padding-right: 0;
+        margin-right: 0;
+    }
+    .section_we{
+        margin-top: 350px;
+    }
+    .we_item {
+        width: 100%;
+}
+}
